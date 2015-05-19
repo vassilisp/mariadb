@@ -6,7 +6,8 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		DBConnection connect = new DBConnection();
-		connect.readDatabase();
+		connect.connectDatabase();
+		connect.getAllUsers();
 	}
 
 }
