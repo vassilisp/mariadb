@@ -17,12 +17,19 @@ public class DBConnection {
 	private ResultSet resultSet = null;
 	
 	public void readDatabase() throws Exception {
+		
+		//connection details
+		String mysql_server = "192.168.15.202";
+		String mysql_database = "javatest";
+		String mysql_user = "vasilisp";
+		String mysql_pass = "a1b2c3456";
+		
 		try {
 			//load the SQL driver
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//setup the connection 
-			connect = DriverManager.getConnection("jdbc:mysql://192.168.15.202/javatest?" + "user=vasilisp&password=a1b2c3456");
+			connect = DriverManager.getConnection("jdbc:mysql://" + mysql_server + "/" + mysql_database + "?" + "user=" + mysql_user + "&password=" + mysql_pass);
 			
 			//statements to issue queries to the database
 			statement = connect.createStatement();
